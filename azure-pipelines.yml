@@ -2,9 +2,12 @@ trigger:
 - main
 
 pool:
- vmImage: Alpha-pool
+ name: Alpha-pool
 
 steps:
   - script: echo hello world
-    displayName: print name
+    displayName: "print name"
+  - script: |
+      echo this is pipeline running using $(Agent.PoolName)
+    displayName: "running pipelines"
 
